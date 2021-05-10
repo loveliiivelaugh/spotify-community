@@ -23,7 +23,19 @@ Using Spotify API, we have set out to have a user login, look up an artist or so
 
 2. Create connection
 
-3. Create Models
+3. Create Models, `/models`
+
+4. Create `Seeds` directory and files
+
+5. `.env` and `.gitignore`
+
+6. `/controllers` directory, `server.js` and accompanying `/routes` containing CRUD operations to interact with API and DB.
+
+7. `/classes` directory, to implement OOP design?
+
+8. `/views`, frontend
+
+...more coming soon!
 
 
 
