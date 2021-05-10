@@ -1,0 +1,63 @@
+<div class="container">
+        <h1 class="playlist-name">New Playlist</h1>
+        <div class="row">
+            <div class="col song-numbers">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top album-covers" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Number of Songs</h5>
+                        <p class="card-text song-number">
+                            <input class="form-control" type="text" placeholder="20" aria-label="default input example">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col similar-artists">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top album-covers" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Similar Artists</h5>
+                        <p class="card-text artist-name">
+                            <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+                            <label class="btn btn-primary" for="btn-check">{{artist.name}}</label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col genres">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top genres" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Genres</h5>
+                        <p class="card-text genre-form">
+                            <select class="form-select" multiple aria-label="multiple select example">
+                                <option selected></option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col moods">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top moods" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Mood</h5>
+                        <p class="card-text genre-form">
+                            <select class="form-select" multiple aria-label="multiple select example">
+                                <option selected></option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row d-grid gap-2 col-2 mx-auto">
+        <input class="btn btn-primary" type="submit" value="Create">
+        </div>
+    </div>
