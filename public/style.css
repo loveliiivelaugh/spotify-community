@@ -1,0 +1,40 @@
+/* color variables  */
+:root {
+  --lightpink: #f8c9cd;
+  --regpink: #f3a5ab;
+  --darkpink: #ee818a;
+
+  --lightyellow: #f3f1a5;
+  --regyellow: #eeea81;
+  --darkyellow: #e9e45d;
+
+  --lightblue: #5c8dff;
+  --regblue: #3370ff;
+  --darkblue: #00398f;
+
+  --white: #f5f5f5;
+  --dark: #32292F;
+}
+
+/* body css to set background to dark */
+body {
+    background-color: var(--dark);
+}
+
+/* removing navbar border and changing color to regblue */
+#mainNavbar {
+  background-color: var(--regblue);
+  border: none;
+  border-radius: 0px;
+  box-shadow: 0px 5px 0px var(--darkblue);
+}
+/* setting lightyellow color and 36px font size */
+#mainNavbar, #projectTitle, #navMainLinks a {
+    color: var(--lightyellow);
+    font-size: 36px;
+}
+/* on hover navlinks change to lightblue */
+#navMainLinks a:hover {
+    background-color: var(--lightblue);
+}
+
