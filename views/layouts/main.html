@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- varela round font through google fonts api -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
     <!-- bootstrap -->
     <link
       rel="stylesheet"
@@ -17,10 +23,13 @@
   </head>
 
   <body>
+    <!-- navbar -->
     <nav class="navbar navbar-default" id="mainNavbar">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#" id="projectTitle">Spotify Placeholder Project</a>
+          <a class="navbar-brand" href="#" id="projectTitle"
+            >Spotify Placeholder Project</a
+          >
         </div>
         <ul class="nav navbar-nav navbar-right" id="navMainLinks">
           <li><a href="#">Home</a></li>
@@ -29,5 +38,43 @@
         </ul>
       </div>
     </nav>
+
+    <div id="mainContent" class="container">
+
+      <div id="welcomeBox" class="row">hello
+          <span id="username">username</span>
+      </div>
+
+      <div id="topMusicRow" class="row">
+
+          <div id="topArtists" class="col-sm-3">
+              <h3>top artists:</h3>
+            <ul id="topArtistsList">
+                <li>artist</li>
+                <li>artist</li>
+                <li>artist</li>
+            </ul>
+          </div>
+
+          <div id="topGenres" class="col-sm-3 col-sm-offset-1">
+            <h3>top genres:</h3>
+            <ul id="topGenresList">
+                <li>rock</li>
+                <li>pop</li>
+                <li>jazz</li>
+            </ul>
+          </div>
+
+          <div id="topSongs" class="col-sm-3 col-sm-offset-1">
+            <h3>top songs:</h3>
+            <ul id="topSongsList">
+                <li>song</li>
+                <li>song</li>
+                <li>song</li>
+            </ul>
+          </div>
+
+      </div>
+    </div>
   </body>
 </html>
