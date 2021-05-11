@@ -18,7 +18,8 @@
       crossorigin="anonymous"
     />
     <!-- css -->
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="../../public/css/style.css" />
+
     <title>Spotify PlaceHolder Title</title>
   </head>
 
@@ -32,9 +33,15 @@
           >
         </div>
         <ul class="nav navbar-nav navbar-right" id="navMainLinks">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">My Playlists</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/playlists">My Playlists</a></li>
           <li><a href="#">About</a></li>
+          <li>
+    {{!-- <h1>This is an example of the Authorization Code flow</h1> --}}
+            <form id="login" method="POST" action="/login">
+              <input type="submit" value="Log in with Spotify">
+            </form>
+          </li>
         </ul>
       </div>
     </nav>
