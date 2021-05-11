@@ -58,4 +58,13 @@ router.post('/logout', (req, res) => {
   }
 });
 
+
+router.get('/', (req, res) => {})
+
+router.get('/:id', (req, res) => {})
+
+router.put('/', (req, res) => {})
+
+router.delete('/', (req, res) => {})
+
 module.exports = router;
