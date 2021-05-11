@@ -61,6 +61,38 @@ body {
 
 /* top artists songs and genres row + boxes */
 
+#topArtistsHeader, #topGenresHeader, #topTracksHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 24px;
+    padding: 4px 0px;
+}
+
+#topArtistsHeader button, #topGenresHeader button, #topTracksHeader button {
+
+    background-color: var(--lighterblue);
+    color: var(--darkblue);
+    border-radius: 0px;
+    padding: 3px;
+    box-shadow: 1px 1px 1px var(--darkblue);
+
+}
+
+#topArtistsHeader button:hover, #topGenresHeader button:hover, #topTracksHeader button:hover {
+
+    background-color: var(--lightestblue);
+    color: var(--darkblue);
+    border-radius: 0px;
+    padding: 3px;
+    box-shadow: 2px 2px 2px var(--darkblue);
+
+}
+
+
+
+
 #topMusicRow {
     margin-top: 40px;
 }
@@ -68,11 +100,13 @@ body {
 #topArtists, #topSongs {
     background: var(--regpink);
     box-shadow: 6px 10px 0px var(--regyellow);
+    padding-bottom: 10px;
 }
 
 #topGenres {
     background: var(--regyellow);
     box-shadow: 6px 10px 0px var(--regpink);
+    padding-bottom: 10px;
 }
     
 
