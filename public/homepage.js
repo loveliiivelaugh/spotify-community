@@ -5,11 +5,16 @@ const setTopArtist = async (event) => {
 const editTopArtist = async (event) => {};
 const delTopArtist = async (event) => {};
 // setting, editing, and delting top genres
-const setTopGenre = async (event) => {};
+const setTopGenre = async (event) => {
+    const genre = document.querySelector().value.trim();
+};
 const editTopGenre = async (event) => {};
 const delTopGenre = async (event) => {};
 // setting, editing, and deleting top tracks
-const setTopTrack = async (event) => {};
+const setTopTrack = async (event) => {
+    const track = "";
+    const artist = document.querySelector().value.trim();
+};
 const editTopTrack = async (event) => {};
 const delTopTrack = async (event) => {};
 
