@@ -6,32 +6,32 @@ class Playlist extends Model {}
 Playlist.init(
     {
         id: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
         },
 
         playlist_name: {
-            type: Datatypes.STRING
+            type: DataTypes.STRING
         },
 
         track_name: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             reference: {
                 model: 'song',
                 key: 'id',
             },
         },
         artist: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             references: {
                 model: 'song',
                 key: 'id',
             },
         },
         album: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             references: {
                 model: 'song',
                 key: 'id',
