@@ -12,17 +12,17 @@ Song.init(
             autoIncrement: true,
         },
         track: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         artist: {
-            type: Datatypes.STRING
+            type: DataTypes.STRING
         },
         album: {
-            type: Datatypes.STRING
+            type: DataTypes.STRING
         },
         genre: {
-            type: Datatypes.STRING
+            type: DataTypes.STRING
         }
     },
     {
