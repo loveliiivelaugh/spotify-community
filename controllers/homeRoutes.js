@@ -3,7 +3,6 @@ const router = require('express').Router();
 // const withAuth = require('../utils/auth');
 const spotifyApi = require('../utils/spotify.js');
 
-
 router.get('/', async (req, res) => {
   try {
     res.render('homepage', { 
