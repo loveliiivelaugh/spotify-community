@@ -61,6 +61,15 @@ body {
 
 /* top artists songs and genres row + boxes */
 
+#topArtistsHeader, #topGenresHeader, #topTracksHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 24px;
+    padding: 4px 0px;
+}
+
 #topMusicRow {
     margin-top: 40px;
 }
