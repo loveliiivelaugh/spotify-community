@@ -1,7 +1,11 @@
 const sequelize = require('../config/connection');
-const { User } = require('../models');
+const { playlist, song, album, user } = require('../models');
 
-const spotifyData = require('./spotifyData.json');
+const playlistData = require('./playlistData.json'); 
+const userData = require('./userData.json');
+const songData = require('./songData.json'); 
+const albumData = require('./albumData.json'); 
+
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
