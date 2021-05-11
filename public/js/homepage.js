@@ -1,22 +1,41 @@
 // setting, editing and deleting top artists
 const setTopArtist = async (event) => {
-    console.log("artists save");
+    console.log("artists button working");
+    let inputs = document.getElementById("artistInputs");
+    
+    for (i = 0; i < inputs.children.length; i++ ) {
+        console.log(inputs.children[i].value);
+    }
+
+
 };
-const editTopArtist = async (event) => {};
-const delTopArtist = async (event) => {};
+
+
+
+// const editTopArtist = async (event) => {};
+// const delTopArtist = async (event) => {};
+
+
+
 // setting, editing, and delting top genres
 const setTopGenre = async (event) => {
 console.log("genres save");
 
 };
-const editTopGenre = async (event) => {};
-const delTopGenre = async (event) => {};
+// const editTopGenre = async (event) => {};
+// const delTopGenre = async (event) => {};
+
+
 // setting, editing, and deleting top tracks
 const setTopTrack = async (event) => {
    console.log("tracks save");
 };
-const editTopTrack = async (event) => {};
-const delTopTrack = async (event) => {};
+// const editTopTrack = async (event) => {};
+// const delTopTrack = async (event) => {};
+
+
+
+// event listeners
 
 // artist event listeners 
 document.querySelector("#artistsSaveBtn").addEventListener("click", setTopArtist);
