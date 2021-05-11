@@ -11,6 +11,10 @@ Playlist.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        song_name: {
+            type: Datatypes.STRING,
+            allowNull: false,
+        }
         
     }
 )
