@@ -68,11 +68,13 @@ body {
 #topArtists, #topSongs {
     background: var(--regpink);
     box-shadow: 6px 10px 0px var(--regyellow);
+    padding-bottom: 10px;
 }
 
 #topGenres {
     background: var(--regyellow);
     box-shadow: 6px 10px 0px var(--regpink);
+    padding-bottom: 10px;
 }
     
 
