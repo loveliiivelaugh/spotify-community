@@ -1,7 +1,7 @@
 const router = require('express').Router();
 // const { Project, User } = require('../models');
 // const withAuth = require('../utils/auth');
-const spotifyApi = require('../util/spotify.js');
+const spotifyApi = require('../utils/spotify.js');
 
 
 router.get('/', async (req, res) => {
@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-app.post('/login', (req, res) => {
+router.post('/login', (req, res) => {
 
   const scopes = ['user-read-private', 'user-read-email'];
   const authorizeURL = spotifyApi.createAuthorizeURL(scopes);
@@ -26,7 +26,7 @@ app.post('/login', (req, res) => {
 })
 
 
-app.get('/callback', (req, res) => {
+router.get('/callback', (req, res) => {
 
   // your application requests refresh and access tokens
   // after checking the state parameter
@@ -61,7 +61,8 @@ app.get('/callback', (req, res) => {
 })
 
 // Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
+// router.get('/profile', withAuth, async (req, res) => {
+router.get('/profile', async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
