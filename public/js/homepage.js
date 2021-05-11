@@ -1,32 +1,33 @@
 // setting, editing and deleting top artists
 const setTopArtist = async (event) => {
-    const artist = document.querySelector().value.trim();
+    const artists = [];
+    console.log(artists);
+    console.log("artist save")
 };
 const editTopArtist = async (event) => {};
 const delTopArtist = async (event) => {};
 // setting, editing, and delting top genres
 const setTopGenre = async (event) => {
-    const genre = document.querySelector().value.trim();
+    const genres = [];
+    console.log("genre save")
 };
 const editTopGenre = async (event) => {};
 const delTopGenre = async (event) => {};
 // setting, editing, and deleting top tracks
 const setTopTrack = async (event) => {
-    const track = "";
-    const artist = document.querySelector().value.trim();
+    const tracks = [];
+    console.log("track save")
 };
 const editTopTrack = async (event) => {};
 const delTopTrack = async (event) => {};
 
+
+
 // artist event listeners 
-document.querySelector("").addEventListener("submit", setTopArtist);
-document.querySelector("").addEventListener("submit", editTopArtist);
-document.querySelector("").addEventListener("submit", delTopArtist);
+document.querySelector('#artistsSaveBtn').addEventListener("click", setTopArtist);
+
 // genre event listeners
-document.querySelector("").addEventListener("submit", setTopGenre);
-document.querySelector("").addEventListener("submit", editTopGenre);
-document.querySelector("").addEventListener("submit", delTopGenre);
+document.querySelector('#genresSaveBtn').addEventListener("click", setTopGenre);
+
 // track event listeners
-document.querySelector("").addEventListener("submit", setTopTrack);
-document.querySelector("").addEventListener("submit", editTopTrack);
-document.querySelector("").addEventListener("submit", delTopTrack);
+document.querySelector('#tracksSaveBtn').addEventListener("click", setTopTrack);
