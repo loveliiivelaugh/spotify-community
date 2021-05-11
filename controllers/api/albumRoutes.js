@@ -146,7 +146,44 @@ router.get('/ArtistRelatedArtists/:item', async (req, res) => {
     .catch(exception => console.error(exception))
 })
 
+router.get('/AudioFeaturesForTrack/:item', async (req, res) => {
+  const AudioFeaturesForTrack = req.params.item ? req.params.item : 'Love';
+  // Get an audio features for a track
+  const url = `https://api.spotify.com/v1/search?q=${AudioFeaturesForTrack}&type=AudioFeaturesForTrack}`
+  const AudioFeaturesForTrack = await axios.get(url, {
+    "Authorization" : User.getToken()
+  })
+  spotifyApi
+    .searchAudioFeaturesForTrack(AudioFeaturesForTrack.params.id)
+    .then(data => console.log(data.body))
+    .catch(exception => console.error(exception))
+})
 
+router.get('/AudioAnalysisForTrack/:item', async (req, res) => {
+  const AudioAnalysisForTrack = req.params.item ? req.params.item : 'Love';
+  // Get audio analysis for tracks
+  const url = `https://api.spotify.com/v1/search?q=${AudioAnalysisForTrack}&type=AudioAnalysisForTrack}`
+  const AudioAnalysisForTrack = await axios.get(url, {
+    "Authorization" : User.getToken()
+  })
+  spotifyApi
+    .searchAudioAnalysisForTrack(AudioAnalysisForTrack.params.id)
+    .then(data => console.log(data.body))
+    .catch(exception => console.error(exception))
+})
+
+router.get('/getAudioFeaturesForTracks/:item', async (req, res) => {
+  const getAudioFeaturesForTracks = req.params.item ? req.params.item : 'Love';
+  // Get audio analysis for tracks
+  const url = `https://api.spotify.com/v1/search?q=${getAudioFeaturesForTracks}&type=getAudioFeaturesForTracks}`
+  const getAudioFeaturesForTracks = await axios.get(url, {
+    "Authorization" : User.getToken()
+  })
+  spotifyApi
+    .searchgetAudioFeaturesForTracks(getAudioFeaturesForTracks.params.id)
+    .then(data => console.log(data.body))
+    .catch(exception => console.error(exception))
+})
 
 
 
