@@ -8,3 +8,6 @@ router.get('/tracks/:item', (req, res) => {
     .then(data => console.log('Search by "Love"', data.body))
     .catch(exception => console.error(exception))
 })
+
+router.get('/related-artists', (req, res) => {
+
