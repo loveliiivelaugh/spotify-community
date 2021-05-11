@@ -1,14 +1,11 @@
 const SpotifyWebApi = require('spotify-web-api-node');
+require('dotenv').config();
 
-const clientId = process.env.CLIENT_ID;
-const clientSecret = process.env.CLIENT_SECRET;
-const redirectUri = process.env.REDIRECT_URI || 'http://localhost:8080/callback/';
 
-// credentials are optional
 const spotifyApi = new SpotifyWebApi({
-  clientId: clientId,
-  clientSecret: clientSecret,
-  redirectUri: redirectUri
+  clientId: process.env.CLIENT_ID,
+  clientSecret: process.env.CLIENT_SECRET,
+  redirectUri: 'http://localhost:8080/callback/'
 });
 
 module.exports = spotifyApi;
