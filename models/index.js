@@ -9,6 +9,7 @@ const Song = require('./song');
 //Many Playlists belong to one user
 Playlist.belongsToMany(User, {
     foreignKey: 'user_id',
+    through: 'UserPlaylist'
 }) 
 
 //User has many Playlists
@@ -20,7 +21,9 @@ User.hasMany(Playlist, {
 Playlist.hasMany(Song);
 
 //One song belongs to many playlists
-Song.belongsToMany(Playlist);
+Song.belongsToMany(Playlist, {
+    through: 'PlaylistSong'
+});
 
 
 module.exports = {
