@@ -1,18 +1,26 @@
 [
     {
-        "name": "Laxed", 
-        "description": "raggae"
+        "track": "Laxed", 
+        "artist": "",  
+        "album": "",
+        "genre": "raggae"
     },
     {
-        "name": "durag activity", 
-        "description": "hip-hop"
+        "track": "durag activity", 
+        "artist": "", 
+        "album": "",
+        "genre": "hip-hop"
     },
     {
-        "name": "die lit", 
-        "description": "hip-hop"
+        "track": "die lit", 
+        "artist": "",
+        "album": "", 
+        "genre": "hip-hop"
     },
     {
-        "name": "freaking out the neighborhood", 
-        "description": "alternative"
+        "track": "freaking out the neighborhood", 
+        "artist": "", 
+        "album": "",
+        "genre": "alternative"
     }
 ]

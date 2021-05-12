@@ -1,16 +1,20 @@
 const sequelize = require('../config/connection');
-const { playlist, song, album, user } = require('../models');
+const {  Song } = require('../models');
 
-const playlistData = require('./playlistData.json'); 
+// const playlistData = require('./playlistData.json'); 
 const userData = require('./userData.json');
 const songData = require('./songData.json'); 
-const albumData = require('./albumData.json'); 
+// const albumData = require('./albumData.json'); 
 
 
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+  // await sequelize.sync({ force: true });
 
-  await User.bulkCreate(spotifyData, {
+  // await User.bulkCreate(spotifyData, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
+  await Song.bulkCreate(songData, {
     individualHooks: true,
     returning: true,
   });

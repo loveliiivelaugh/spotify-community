@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
-    "watch": "node server/index.js"
+    "watch": "node server/index.js",
+    "seed": "node seeds/seed.js"
   },
   "engines": {
     "node": "12.14.0",

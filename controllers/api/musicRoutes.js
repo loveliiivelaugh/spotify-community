@@ -1,8 +1,9 @@
 const router = require('express').Router();
+// const { Model } = require('sequelize/types');
 const Music = require('../../models/Music.js')
 
 
-router.get('/artist/:id', (req, res) => {
+router.get('/artist/:id', async (req, res) => {
   try {
     const artistData = await Music.findByPk(req.params.id);
     res.status(200).json(artistData)
@@ -12,7 +13,7 @@ router.get('/artist/:id', (req, res) => {
   }
 })
 
-router.get('/artists', (req, res) => {
+router.get('/artists', async (req, res) => {
   try {
     const artistData = await Music.findAll();
     res.status(200).json(artistData)
@@ -22,7 +23,7 @@ router.get('/artists', (req, res) => {
   }
 })
 
-router.post('/artists', (req, res) => {
+router.post('/artists', async (req, res) => {
   try {
     const artistData = await Music.create({
       artist: req.body.artist
@@ -34,9 +35,9 @@ router.post('/artists', (req, res) => {
   }
 })
 
-router.put('/artist/:id', (req, res) => {})
+// router.put('/artist/:id', (req, res) => {})
 
-router.delete('/artist/:id', (req, res) => {
+router.delete('/artist/:id', async (req, res) => {
   try {
     const artistData = await Music.destroy({
       where: {
@@ -58,7 +59,7 @@ router.delete('/artist/:id', (req, res) => {
 })
 
 
-router.get('/track/:id', (req, res) => {
+router.get('/track/:id', async (req, res) => {
   try {
     const trackData = await Music.findByPk(req.params.id);
     res.status(200).json(trackData)
@@ -68,7 +69,7 @@ router.get('/track/:id', (req, res) => {
   }
 })
 
-router.get('/tracks', (req, res) => {
+router.get('/tracks', async (req, res) => {
   try {
     const trackData = await Music.findAll();
     res.status(200).json(trackData)
@@ -78,7 +79,7 @@ router.get('/tracks', (req, res) => {
   }
 })
 
-router.post('/tracks', (req, res) => {
+router.post('/tracks', async (req, res) => {
   try {
     const trackData = await Music.create({
       track: req.body.track
@@ -92,7 +93,7 @@ router.post('/tracks', (req, res) => {
 
 router.put('/track/:id', (req, res) => {})
 
-router.delete('/track/:id', (req, res) => {
+router.delete('/track/:id', async (req, res) => {
   try {
     const trackData = await Music.destroy({
       where: {
@@ -114,7 +115,7 @@ router.delete('/track/:id', (req, res) => {
 })
 
 
-router.get('/genre/:id', (req, res) => {
+router.get('/genre/:id', async (req, res) => {
   try {
     const genreData = await Music.findByPk(req.params.id);
     res.status(200).json(genreData)
@@ -124,7 +125,7 @@ router.get('/genre/:id', (req, res) => {
   }
 })
 
-router.get('/genres', (req, res) => {
+router.get('/genres', async (req, res) => {
   try {
     const genreData = await Music.findAll();
     res.status(200).json(genreData)
@@ -134,7 +135,7 @@ router.get('/genres', (req, res) => {
   }
 })
 
-router.post('/genres', (req, res) => {
+router.post('/genres', async (req, res) => {
   try {
     const genreData = await Music.create({
       genre: req.body.genre
@@ -146,9 +147,9 @@ router.post('/genres', (req, res) => {
   }
 })
 
-router.put('/genre/:id', (req, res) => {})
+router.put('/genre/:id', async (req, res) => {})
 
-router.delete('/genre/:id', (req, res) => {
+router.delete('/genre/:id', async (req, res) => {
   try {
     const genreData = await Music.destroy({
       where: {
@@ -167,4 +168,6 @@ router.delete('/genre/:id', (req, res) => {
     console.error(error);
     res.status(500).json(error);
   }
-})
+}) 
+
+module.exports = router
