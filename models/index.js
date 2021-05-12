@@ -1,12 +1,12 @@
 //dependencies
-const Song = require('./song');
 const Playlist = require('./playlist');
-const Music = require('./music');
 const User = require('./user');
+const Song = require('./song');
+const Music = require('./music');
+
 
 
 //Relationships
-
 
 //Playlists belong to one user
 Playlist.belongsTo(User, {
@@ -18,23 +18,24 @@ User.hasMany(Playlist, {
     foreignKey: 'user_id',
 });
 
-// // //A playlist contains many songs
-// Playlist.hasMany(Song, {
-//     foreignKey: 'user_id',
-// })
+//A playlist has many songs
+// Playlist.hasMany(Song)
 
 
 // //One song belongs to many playlists
-// Song.belongsTo(Playlist, {
-//     foreignKey: 'playlist_id'
-// })
+// Song.belongsTo(Playlist)
 
-// //Music contains many playlists
+// //Music has many playlists
+
+
 // Music.belongsToMany(Playlist, {
 //     foreignKey: ''
 // }) 
 
 module.exports = {
-    Song
+    Song,
+    Playlist,
+    Music,
+    User,    
 }
 
