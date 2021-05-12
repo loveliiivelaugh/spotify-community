@@ -1,26 +1,50 @@
 [
     {
         "track": "Laxed", 
-        "artist": "",  
-        "album": "",
-        "genre": "raggae"
+        "artist": "Blaze",  
+        "album": "Sweet Leaf",
+        "genre": "reggae"
     },
     {
         "track": "durag activity", 
-        "artist": "", 
-        "album": "",
+        "artist": "Yung Yeller", 
+        "album": "New Tricks, Old Dogs",
         "genre": "hip-hop"
     },
     {
         "track": "die lit", 
-        "artist": "",
-        "album": "", 
-        "genre": "hip-hop"
+        "artist": "Jump5",
+        "album": "Praise", 
+        "genre": "contemporary-worship"
     },
     {
         "track": "freaking out the neighborhood", 
-        "artist": "", 
-        "album": "",
+        "artist": "Skin", 
+        "album": "New Phone, Who Dis?",
         "genre": "alternative"
+    },
+    {
+        "track": "I Can't Ever Quit", 
+        "artist": "Master Beat",  
+        "album": "EuroBLAST",
+        "genre": "turbo-folk"
+    },
+    {
+        "track": "Hi, How Ya Doing?", 
+        "artist": "Kenny G", 
+        "album": "G-Force",
+        "genre": "easy-listening"
+    },
+    {
+        "track": "No More Christmas Anymore", 
+        "artist": "Mariah Carey",
+        "album": "I Am Anti Santa Now", 
+        "genre": "christmas-soundtrack"
+    },
+    {
+        "track": "Disco Inferno", 
+        "artist": "The Trammps", 
+        "album": "Disco For You",
+        "genre": "vintage-disco"
     }
 ]
