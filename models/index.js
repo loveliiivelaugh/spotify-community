@@ -4,8 +4,6 @@ const User = require('./user');
 const Song = require('./song');
 const Music = require('./music');
 
-
-
 //Relationships
 
 //Playlists belong to one user
@@ -18,11 +16,10 @@ User.hasMany(Playlist, {
     foreignKey: 'user_id',
 });
 
-//A playlist has many songs
+//A playlist has many songs (One Playlist has many Songs)
 // Playlist.hasMany(Song)
 
-
-// //One song belongs to many playlists
+//One song belongs to many playlists
 // Song.belongsTo(Playlist)
 
 // //Music has many playlists
