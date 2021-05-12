@@ -29,6 +29,7 @@ Song.init(
         sequelize,
         freezeTableName: true,
         modelName: 'song'
+        
     }
 );
 
