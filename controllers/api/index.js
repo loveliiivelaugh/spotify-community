@@ -3,7 +3,7 @@ const router = require('express').Router();
 const userRoutes = require('./userRoutes');
 
 const spotifyRoutes = require('./spotifyRoutes');
-// const musicRoutes = require('./musicRoutes');
+const musicRoutes = require('./musicRoutes');
 // const albumRoutes = require('./albumRoutes');
 // const artistRoutes = require('./artistRoutes');
 // const browseRoutes = require('./browseRoutes');
@@ -19,7 +19,7 @@ const spotifyRoutes = require('./spotifyRoutes');
 router.use('/users', userRoutes);
 
 router.use('/spotify', spotifyRoutes);
-// router.use('/music', musicRoutes);
+router.use('/music', musicRoutes);
 
 // router.use('/albums', albumRoutes);
 // router.use('/artists', artistRoutes);
