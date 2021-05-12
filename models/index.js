@@ -31,3 +31,5 @@ User.hasMany(Playlist, {
 // Music.belongsToMany(Playlist, {
 //     foreignKey: ''
 // })
+
+exports.module = { Song, Playlist, Music, User };
