@@ -3,7 +3,6 @@ const Song = require('./song');
 const Playlist = require('./playlist');
 const Music = require('./music');
 const User = require('./user');
-const { DataTypes } = require('sequelize/types');
 
 //Relationships
 
