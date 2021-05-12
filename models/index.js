@@ -17,12 +17,13 @@ User.hasMany(Playlist, {
 });
 
 //A playlist has many songs (One Playlist has many Songs)
-// Playlist.hasMany(Song)
+Playlist.hasMany(Song)
 
 //One song belongs to many playlists
-// Song.belongsTo(Playlist)
+Song.belongsTo(Playlist)
 
 // //Music has many playlists
+
 
 
 // Music.belongsToMany(Playlist, {
