@@ -1,5 +1,8 @@
 const router = require('express').Router();
+
 const userRoutes = require('./userRoutes');
+
+const spotifyRoutes = require('./spotifyRoutes');
 const albumRoutes = require('./albumRoutes');
 const artistRoutes = require('./artistRoutes');
 const browseRoutes = require('./browseRoutes');
@@ -13,6 +16,8 @@ const userProfileRoutes = require('./userProfileRoutes');
 const playerRoutes = require('./playerRoutes');
 
 router.use('/users', userRoutes);
+
+router.use('/spotify', spotifyRoutes);
 router.use('/albums', albumRoutes);
 router.use('/artists', artistRoutes);
 router.use('/browse', browseRoutes);
