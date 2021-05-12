@@ -1,4 +1,5 @@
 const router = require('express').Router();
+// const { Model } = require('sequelize/types');
 const Music = require('../../models/Music.js')
 
 
@@ -50,6 +51,7 @@ router.put('/artist/:id', async (req, res) => {
     .then(updatedArtist => res.json(updatedArtist))
     .catch(err => res.json(err))
 });
+
 
 router.delete('/artist/:id', async (req, res) => {
   try {
@@ -176,6 +178,7 @@ router.post('/genres', async (req, res) => {
   }
 })
 
+
 router.put('/genre/:id', async (req, res) => {
   // Calls the update method on the Book model
   Music.update(
@@ -192,6 +195,7 @@ router.put('/genre/:id', async (req, res) => {
     .then(updatedGenre => res.json(updatedGenre))
     .catch(err => res.json(err))
 });
+
 
 router.delete('/genre/:id', async (req, res) => {
   try {
@@ -212,4 +216,6 @@ router.delete('/genre/:id', async (req, res) => {
     console.error(error);
     res.status(500).json(error);
   }
-})
+}) 
+
+module.exports = router
