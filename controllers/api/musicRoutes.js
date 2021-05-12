@@ -22,7 +22,7 @@ router.get('/artists', (req, res) => {
   }
 })
 
-router.post('/artist', (req, res) => {
+router.post('/artists', (req, res) => {
   try {
     const artistData = await Music.create({
       artist: req.body.artist
@@ -78,7 +78,7 @@ router.get('/tracks', (req, res) => {
   }
 })
 
-router.post('/track', (req, res) => {
+router.post('/tracks', (req, res) => {
   try {
     const trackData = await Music.create({
       track: req.body.track
@@ -134,7 +134,7 @@ router.get('/genres', (req, res) => {
   }
 })
 
-router.post('/genre', (req, res) => {
+router.post('/genres', (req, res) => {
   try {
     const genreData = await Music.create({
       genre: req.body.genre
