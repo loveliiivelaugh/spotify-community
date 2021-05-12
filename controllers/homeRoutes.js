@@ -5,19 +5,21 @@ const withAuth = require('../utils/auth');
 const spotifyApi = require('../utils/spotify.js');
 
 router.get('/', async (req, res) => {
-  const musicData = await Music.findAll();
-
-  console.log(musicData);
+  // console.log(await Music.findAll({ sort: ["descending"] }))
+  const musicData = await Music.findAll({ sort: ["ascending"] });
 
   const music = musicData.map(music => music.get({ plain: true }))
+
+  // console.log(music);
+  // const music = musicData.map(music => music.get({ plain: true }))
 
 
   try {
     res.render('homepage', {
       logged_in: req.session.logged_in,
-      artists: music
-    });
-  } catch (err) {
+      artists: music.splice(0, 5)
+    })
+  } catch(err) {
     res.status(500).json(err);
   }
 });
