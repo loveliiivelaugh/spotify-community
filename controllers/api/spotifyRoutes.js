@@ -20,6 +20,7 @@ router.get('/callback', (req, res) => {
   const code = req.query.code || null;
   const state = req.query.state || null;
   // const storedState = req.cookies ? req.cookies[stateKey] : null;
+
   console.log(code)
 
   // Retrieve an access token and a refresh token

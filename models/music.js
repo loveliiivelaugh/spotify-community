@@ -36,3 +36,4 @@ Music.init(
     }
 )
 
+module.exports = Music;

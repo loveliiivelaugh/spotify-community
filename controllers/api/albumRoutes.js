@@ -1,57 +1,63 @@
 const router = require('express').Router();
 const User = require('../../models/User');
 var SpotifyWebApi = require('spotify-web-api-node');
-const { default: axios } = require('axios');
-const { query } = require('express');
+const axios = require('axios');
 
-var spotifyApi = new SpotifyWebApi();
 
-router.get('/tracks/:item', (req, res) => {
-  const track = req.params.id ? req.params.id : 'Love';
-  // Search tracks whose name, album or artist contains 'Love'
-  spotifyApi
-    .searchTracks(track)
-    .then(data => console.log('Search by "Love"', data.body))
-    .catch(exception => console.error(exception))
+router.get('/tracks/:track', (req, res) => {
+  try {
+    const track = req.params?.track;
+
+    if (!track) { 
+      res.status(400).json({ message: "Must enter a valid track name." }) 
+    }
+
+    spotifyApi
+      .searchTracks(track)
+      .then(data => console.log(`Search by "${track}": `, data.body) && res.json(data.body))
+      .catch(exception => console.error(exception))
+
+  } catch (error) {
+    console.error(error);
+  }
 })
 
 
-router.get('/album/:item', async (req, res) => {
-  const albumName = req.params.item ? req.params.item : 'Love';
-  // Search albums whose name, album or artist contains 'Love'
-  const url = `https://api.spotify.com/v1/search?q=${albumName}&type=album}`
+router.get('/album/:album', async (req, res) => {
+  const albumName = req.params?.album;
+
+  if (!albumName) { 
+    res.status(400).json({ message: "Must enter a valid album name." }) 
+  }
+
+  const url = `https://api.spotify.com/v1/search?q=${albumName}&type=album`;
+
   const album = await axios.get(url, {
     "Authorization" : User.getToken()
   })
+
   spotifyApi
     .searchAlbum(album.items.id)
-    .then(data => console.log('Search by "Love"', data.body))
+    .then(data => console.log(`Search by "${albumName}": `, data.body) && res.json(data.body))
     .catch(exception => console.error(exception))
 })
 
-router.get('/albums/:item', async (req, res) => {
-  const albumsNames = req.params.item ? req.params.item : 'Love';
-  // Search albums whose name, album or artist contains 'Love'
-  const url = `https://api.spotify.com/v1/search?q=${albumsNames}&type=albums}`
-  const albums = await axios.get(url, {
-    "Authorization" : User.getToken()
-  })
-  spotifyApi
-    .searchAlbums(albums.items.id)
-    .then(data => console.log('Search by "Love"', data.body))
-    .catch(exception => console.error(exception))
-})
+router.get('/artist/:artist', async (req, res) => {
+  const artistName = req.params?.artist;
 
-router.get('/artist/:item', async (req, res) => {
-  const artist = req.params.item ? req.params.item : 'Love';
-  // Search artist who contains 'Love'
-  const url = `https://api.spotify.com/v1/search?q=${artist}&type=artist}`
+  if (!artistName) { 
+    res.status(400).json({ message: "Must enter a valid artist name." }) 
+  }
+
+  const url = `https://api.spotify.com/v1/search?q=${artistName}&type=artist`;
+
   const artist = await axios.get(url, {
     "Authorization" : User.getToken()
   })
+
   spotifyApi
     .searchArtist(artist.items.id)
-    .then(data => console.log('Search by "Love"', data.body))
+    .then(data => console.log(`Search by "${artistName}": `, data.body) && res.json(data.body))
     .catch(exception => console.error(exception))
 })
 
@@ -68,18 +74,27 @@ router.get('/artists/:item', async (req, res) => {
     .catch(exception => console.error(exception))
 })
 
-router.get('/artistAlbums/:item', async (req, res) => {
-  const artistAlbums = req.params.item ? req.params.item : 'Love';
-  // Search albums by a certain artist who contains 'Love'
-  const url = `https://api.spotify.com/v1/search?q=${artistAlbums}&type=artistAlbums}`
-  const artistAlbums = await axios.get(url, {
+router.get('/albums/artist/:artist', async (req, res) => {
+  const artistName = req.params?.artist;
+
+  if (!artistName) { 
+    res.status(400).json({ message: "Must enter a valid artist name." }) 
+  }
+
+  const url = `https://api.spotify.com/v1/search?q=${artistName}&type=artist`;
+
+  const artist = await axios.get(url, {
     "Authorization" : User.getToken()
   })
-  spotifyApi
-    .searchArtistAlbums(artistAlbums.items.id)
-    .then(data => console.log('Search by "Love"', data.body))
-    .catch(exception => console.error(exception))
-})
+
+  // Get albums by a certain artist
+  spotifyApi.getArtistAlbums(artist.items.id)
+    .then(data => {
+      console.log(`Artist albums by artist, ${artistName}`, data.body);
+      res.json(data.body);
+    })
+    .catch(exception =>  console.error(exception))
+}
 
 router.get('/tracks/:item', async (req, res) => {
   const tracks = req.params.item ? req.params.item : 'Love';
@@ -180,12 +195,7 @@ router.get('/getAudioFeaturesForTracks/:item', async (req, res) => {
     "Authorization" : User.getToken()
   })
   spotifyApi
-    .searchgetAudioFeaturesForTracks(getAudioFeaturesForTracks.params.id)
+    .getAudioFeaturesForTracks(getAudioFeaturesForTracks.params.id)
     .then(data => console.log(data.body))
     .catch(exception => console.error(exception))
 })
-
-
-
-
-
