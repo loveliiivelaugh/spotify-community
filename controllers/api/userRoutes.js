@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const User = require('../../models');
 
 
 
@@ -42,8 +42,23 @@ router.get('/:id', async (req, res) => {
   }
 })
 
-//! Come back to this!!
-router.put('/:id', (req, res) => {})
+router.put('/:id', (req, res) => {
+  User.update(
+    {
+      // All the fields you can update and the data attached to the request body.
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
+    .then(updatedUser => res.json(updatedUser))
+    .catch(error => res.json(error))
+});
 
 router.delete('/:id', async (req, res) => {
   try {
