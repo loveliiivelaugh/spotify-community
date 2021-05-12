@@ -15,29 +15,23 @@ Playlist.init(
         playlist_name: {
             type: DataTypes.STRING
         },
+        
 
         track_name: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             reference: {
                 model: 'song',
                 key: 'id',
             },
         },
-        artist: {
-            type: DataTypes.STRING,
-            references: {
-                model: 'song',
-                key: 'id',
-            },
-        },
-        album: {
-            type: DataTypes.STRING,
-            references: {
-                model: 'song',
-                key: 'id',
-            }
-        }
         
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            },
+        },        
     },
     {
         sequelize,

@@ -35,7 +35,23 @@ router.post('/artists', async (req, res) => {
   }
 })
 
-// router.put('/artist/:id', (req, res) => {})
+router.put('/artist/:id', async (req, res) => {
+  // Calls the update method on the Book model
+  Music.update(
+    {
+      // All the fields you can update and the data attached to the request body.
+      artist: req.body.artist,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
+    .then(updatedArtist => res.json(updatedArtist))
+    .catch(err => res.json(err))
+});
+
 
 router.delete('/artist/:id', async (req, res) => {
   try {
@@ -91,7 +107,22 @@ router.post('/tracks', async (req, res) => {
   }
 })
 
-router.put('/track/:id', (req, res) => {})
+router.put('/track/:id', async (req, res) => {
+  // Calls the update method on the Book model
+  Music.update(
+    {
+      // All the fields you can update and the data attached to the request body.
+      track: req.body.track,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
+    .then(updatedTrack => res.json(updatedTrack))
+    .catch(err => res.json(err))
+});
 
 router.delete('/track/:id', async (req, res) => {
   try {
@@ -147,7 +178,24 @@ router.post('/genres', async (req, res) => {
   }
 })
 
-router.put('/genre/:id', async (req, res) => {})
+
+router.put('/genre/:id', async (req, res) => {
+  // Calls the update method on the Book model
+  Music.update(
+    {
+      // All the fields you can update and the data attached to the request body.
+      genre: req.body.genre,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
+    .then(updatedGenre => res.json(updatedGenre))
+    .catch(err => res.json(err))
+});
+
 
 router.delete('/genre/:id', async (req, res) => {
   try {
