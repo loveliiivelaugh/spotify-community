@@ -24,10 +24,23 @@ router.get('/artists', async (req, res) => {
 })
 
 router.post('/artists', async (req, res) => {
+  console.log(req.body);
+  const user_id = req.session.user_id;
+
+  const artists = [];
+
+  await req.body.forEach(artist => artists.push({
+    artist: artist,
+    user_id: req.session.user_id
+  }))
+
+  console.log(artists);
+
   try {
-    const artistData = await Music.create({
-      artist: req.body.artist
-    });
+    const artistData = await Music.bulkCreate(artists)
+    // const artistData = await Music.create({
+    //   artist: req.body
+    // });
     res.status(200).json(artistData)
   } catch (error) {
     console.error(error);

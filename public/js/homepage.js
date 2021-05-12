@@ -1,6 +1,18 @@
+const topArtistsArray = document.getElementById("artistsInputs")
+
+console.log("I am attached!!!")
+
 // setting, editing and deleting top artists
 const setTopArtist = async (event) => {
-    console.log("artists save", event.target);
+    console.log("!!!artists save", event.target);
+
+    console.log(topArtistsArray.childNodes);
+
+    const topArtists = []
+    topArtistsArray.childNodes.forEach(el => 
+        el.value ? topArtists.push(el.value) : ''
+    )
+
     try {
         const example = {
             artist: 'red hot chili peppers'
@@ -8,7 +20,7 @@ const setTopArtist = async (event) => {
 
         const response = await fetch('/api/music/artists', {
             method: "POST",
-            body: JSON.stringify(example),
+            body: JSON.stringify(topArtists),
             headers: {
                 "Content-Type": "application/json",
             },
@@ -34,7 +46,7 @@ const editTopTrack = async (event) => {};
 const delTopTrack = async (event) => {};
 
 // artist event listeners 
-document.querySelector("#artistsSaveBtn").addEventListener("click", setTopArtist);
+document.querySelector("#artist-save-btn").addEventListener("click", setTopArtist);
 
 // genre event listeners
 document.querySelector("#genresSaveBtn").addEventListener("click", setTopGenre);
