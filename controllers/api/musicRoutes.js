@@ -24,9 +24,9 @@ router.get('/artists', async (req, res) => {
 })
 
 router.post('/artists', async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const user_id = req.session.user_id;
-
+console.log(user_id);
   const artists = [];
 
   await req.body.forEach(artist => artists.push({
