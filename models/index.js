@@ -17,10 +17,10 @@ User.hasMany(Playlist, {
     foreignKey: 'user_id',
 });
 
-//A playlist contains many songs
-Playlist.hasMany(Song, {
-    foreignKey: 'user_id',
-})
+// //A playlist contains many songs
+// Playlist.hasMany(Song, {
+//     foreignKey: 'user_id',
+// })
 
 
 // //One song belongs to many playlists
