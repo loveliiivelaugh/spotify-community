@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
   }
 })
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id);
 
@@ -45,7 +45,7 @@ router.get('/:id', (req, res) => {
 //! Come back to this!!
 router.put('/:id', (req, res) => {})
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const userData = await User.destroy({
       where: {

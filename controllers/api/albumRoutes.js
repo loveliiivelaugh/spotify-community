@@ -6,7 +6,7 @@ const axios = require('axios');
 
 router.get('/tracks/:track', (req, res) => {
   try {
-    const track = req.params?.track;
+    const track = req.params.track ? req.params.track : null;
 
     if (!track) { 
       res.status(400).json({ message: "Must enter a valid track name." }) 
@@ -24,7 +24,7 @@ router.get('/tracks/:track', (req, res) => {
 
 
 router.get('/album/:album', async (req, res) => {
-  const albumName = req.params?.album;
+  const albumName = req.params.album ? req.params.album : null;
 
   if (!albumName) { 
     res.status(400).json({ message: "Must enter a valid album name." }) 
@@ -43,7 +43,7 @@ router.get('/album/:album', async (req, res) => {
 })
 
 router.get('/artist/:artist', async (req, res) => {
-  const artistName = req.params?.artist;
+  const artistName = req.params.artist ? req.params.artist : null;
 
   if (!artistName) { 
     res.status(400).json({ message: "Must enter a valid artist name." }) 
@@ -62,9 +62,9 @@ router.get('/artist/:artist', async (req, res) => {
 })
 
 router.get('/artists/:item', async (req, res) => {
-  const artists = req.params.item ? req.params.item : 'Love';
-  // Search all artists who contains 'Love'
-  const url = `https://api.spotify.com/v1/search?q=${artists}&type=artists}`
+  const artistsName = req.params.item ? req.params.item : 'Love';
+  // Search all artistsName who contains 'Love'
+  const url = `https://api.spotify.com/v1/search?q=${artistsName}&type=artists}`
   const artists = await axios.get(url, {
     "Authorization" : User.getToken()
   })
@@ -75,7 +75,7 @@ router.get('/artists/:item', async (req, res) => {
 })
 
 router.get('/albums/artist/:artist', async (req, res) => {
-  const artistName = req.params?.artist;
+  const artistName = req.params.artist ? req.params.artist : null;
 
   if (!artistName) { 
     res.status(400).json({ message: "Must enter a valid artist name." }) 
@@ -93,13 +93,13 @@ router.get('/albums/artist/:artist', async (req, res) => {
       console.log(`Artist albums by artist, ${artistName}`, data.body);
       res.json(data.body);
     })
-    .catch(exception =>  console.error(exception))
-}
+    .catch(exception => console.error(exception))
+})
 
 router.get('/tracks/:item', async (req, res) => {
-  const tracks = req.params.item ? req.params.item : 'Love';
-  // Search tracks whose name, album or artist who contains 'Love'
-  const url = `https://api.spotify.com/v1/search?q=${tracks}&type=tracks}`
+  const tracksName = req.params.item ? req.params.item : 'Love';
+  // Search tracksName whose name, album or artist who contains 'Love'
+  const url = `https://api.spotify.com/v1/search?q=${tracksName}&type=tracks}`
   const tracks = await axios.get(url, {
     "Authorization" : User.getToken()
   })
