@@ -1,5 +1,18 @@
 [
-    { 
-
+    {
+        "name": "Bike Ride Music", 
+        "description": "606 music"
+    },
+    {
+        "name": "Ultimate Beach Boy playlist", 
+        "description": "North Ave. music"
+    },
+    {
+        "name": "Trader Joe's Hip-Hip", 
+        "description": "shopping hip-hoppin'"
+    },
+    {
+        "name": "Frank Ocean Hits", 
+        "description": "make some music bro"
     }
 ]
