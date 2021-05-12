@@ -29,27 +29,39 @@ const setTopArtist = async (event) => {
         console.error(error);
     }
 };
-const editTopArtist = async (event) => {};
-const delTopArtist = async (event) => {};
+
+
+
+// const editTopArtist = async (event) => {};
+// const delTopArtist = async (event) => {};
+
+
+
 // setting, editing, and delting top genres
 const setTopGenre = async (event) => {
 console.log("genres save");
 
 };
-const editTopGenre = async (event) => {};
-const delTopGenre = async (event) => {};
+// const editTopGenre = async (event) => {};
+// const delTopGenre = async (event) => {};
+
+
 // setting, editing, and deleting top tracks
 const setTopTrack = async (event) => {
    console.log("tracks save");
 };
-const editTopTrack = async (event) => {};
-const delTopTrack = async (event) => {};
+// const editTopTrack = async (event) => {};
+// const delTopTrack = async (event) => {};
+
+
+
+// event listeners
 
 // artist event listeners 
 document.querySelector("#artist-save-btn").addEventListener("click", setTopArtist);
 
 // genre event listeners
-document.querySelector("#genresSaveBtn").addEventListener("click", setTopGenre);
+document.querySelector("#genre-save-btn").addEventListener("click", setTopGenre);
 
 // track event listeners
-document.querySelector("#tracksSaveBtn").addEventListener("click", setTopTrack);
+document.querySelector("#track-save-btn").addEventListener("click", setTopTrack);
