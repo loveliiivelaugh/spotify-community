@@ -1,27 +1,52 @@
 [
     {
-        "name": "", 
-        "email": "", 
-        "password": "" 
+        "name": "Barnaby", 
+        "email": "bigboi@boi.com", 
+        "password": "12345" 
     },
     {
-        "name": "", 
-        "email": "", 
-        "password": "" 
+        "name": "Gurl", 
+        "email": "gurl@gurl.com", 
+        "password": "12345" 
     },
     {
-        "name": "", 
-        "email": "", 
-        "password": "" 
+        "name": "Chancelor", 
+        "email": "sweetie@sweetie.com", 
+        "password": "12345" 
     },
     {
-        "name": "", 
-        "email": "", 
-        "password": "" 
+        "name": "Bazooka", 
+        "email": "tastygum@gumchewer.com", 
+        "password": "12345" 
     },
     {
-        "name": "", 
-        "email": "", 
-        "password": "" 
+        "name": "Chelsea", 
+        "email": "skateboard@siqflip.com", 
+        "password": "12345" 
+    },
+    {
+        "name": "Holy", 
+        "email": "jesus@jesus.com", 
+        "password": "12345" 
+    },
+    {
+        "name": "Sammantha", 
+        "email": "thank@you.com", 
+        "password": "12345" 
+    },
+    {
+        "name": "Cat", 
+        "email": "actuallyakitten@smallcat.com", 
+        "password": "12345" 
+    },
+    {
+        "name": "Dog", 
+        "email": "woof@growlingbecauseiamhungry.com", 
+        "password": "12345" 
+    },
+    {
+        "name": "Marie", 
+        "email": "theyareminerals@notrocks.com", 
+        "password": "12345" 
     }
 ]
