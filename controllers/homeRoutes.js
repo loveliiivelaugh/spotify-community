@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
   try {
     res.render('homepage', {
       logged_in: req.session.logged_in,
-      artists: music.artists
+      artists: music
     });
   } catch (err) {
     res.status(500).json(err);
