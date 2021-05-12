@@ -1,13 +1,21 @@
 // setting, editing and deleting top artists
 const setTopArtist = async (event) => {
-    console.log("artists button working");
-    let inputs = document.getElementById("artistInputs");
-    
-    for (i = 0; i < inputs.children.length; i++ ) {
-        console.log(inputs.children[i].value);
+    console.log("artists save", event.target);
+    try {
+        const example = {
+            artist: 'red hot chili peppers'
+        }
+
+        const response = await fetch('/api/music/artists', {
+            method: "POST",
+            body: JSON.stringify(example),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })   
+    } catch (error) {
+        console.error(error);
     }
-
-
 };
 
 
