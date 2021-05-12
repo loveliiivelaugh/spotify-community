@@ -5,9 +5,17 @@ const withAuth = require('../utils/auth');
 const spotifyApi = require('../utils/spotify.js');
 
 router.get('/', async (req, res) => {
+  const musicData = await Music.findAll();
+
+  console.log(musicData);
+
+  const music = musicData.map(music => music.get({ plain: true }))
+
+
   try {
-    res.render('homepage', { 
-      logged_in: req.session.logged_in
+    res.render('homepage', {
+      logged_in: req.session.logged_in,
+      music: music
     });
   } catch (err) {
     res.status(500).json(err);

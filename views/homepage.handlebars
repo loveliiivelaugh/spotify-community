@@ -6,15 +6,18 @@
 
   <div id="topMusicRow" class="row">
 
+  {{!-- {{#if logged_in }} --}}
+
     <div id="topArtists" class="col-sm-3">
       <div id="topArtistsHeader">
         <span>top artists:</span>
         <button
           type="button"
-          class="btn btn-outline-success" id="artistsSaveBtn"
+          class="btn btn-outline-success" 
+          id="artist-save-btn"
         >save</button></div>
       <div id="topArtistsList">
-        <div class="input-group mb-3">
+        <div id="artistsInputs" class="input-group mb-3">
           <input type="text" class="form-control" aria-label="artist1" />
           <input type="text" class="form-control" aria-label="artist2" />
           <input type="text" class="form-control" aria-label="artist3" />
