@@ -61,7 +61,7 @@ const setTopTrack = async (event) => {
 document.querySelector("#artist-save-btn").addEventListener("click", setTopArtist);
 
 // genre event listeners
-document.querySelector("#genresSaveBtn").addEventListener("click", setTopGenre);
+document.querySelector("#genre-save-btn").addEventListener("click", setTopGenre);
 
 // track event listeners
-document.querySelector("#tracksSaveBtn").addEventListener("click", setTopTrack);
+document.querySelector("#track-save-btn").addEventListener("click", setTopTrack);
