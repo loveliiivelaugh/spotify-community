@@ -5,7 +5,6 @@ const Song = require('./song');
 const Music = require('./music');
 
 
-
 //Relationships
 
 //Playlists belong to one user
@@ -38,4 +37,3 @@ module.exports = {
     Music,
     User,    
 }
-
