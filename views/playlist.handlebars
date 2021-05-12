@@ -1,3 +1,12 @@
+{{#if !user.spotify }} {{!Come back to this}}
+{{!-- <h1>This is an example of the Authorization Code flow</h1> --}}
+    <div class="container">
+        <form id="login" method="POST" action="/api/spotify/login">
+            <input type="submit" value="Log in with Spotify">
+        </form>
+    </div>
+{{/if}}
+
 <div class="container">
         <h1 class="playlist-name">New Playlist</h1>
         <div class="row">
