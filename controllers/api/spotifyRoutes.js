@@ -1,5 +1,5 @@
+const spotifyApi = require('../../utils/spotify.js');
 const router = require('express').Router();
-const spotifyApi = require('../utils/spotify.js');
 
 
 router.post('/login', (req, res) => {
@@ -47,3 +47,5 @@ router.get('/callback', (req, res) => {
       res.sendStatus(400)
     })
 })
+
+module.exports = router;
