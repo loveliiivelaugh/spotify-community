@@ -16,11 +16,11 @@
         "description": "make some music bro"
     },
     {
-        "name": "Get Away From Me", 
-        "description": "pissed off at the gov? Me too."
+        "name": "Please Stop Using Facial Recognition On Me", 
+        "description": "songs to hate your government to"
     },
     {
-        "name": "I Love You", 
+        "name": "Unrequited Love", 
         "description": "hopelessly romantic music for those heart throb dreams"
     },
     {
@@ -29,6 +29,70 @@
     },
     {
         "name": "Environments", 
-        "description": "the natural ambience of the beautiful soungs all around us"
+        "description": "the natural ambience of the beautiful sounds all around us"
+    },
+    {
+        "name": "Reverberation Station", 
+        "description": "That classic washed out vintage vibe of the 1960's, 70's, and 80's"
+    },
+    {
+        "name": "I Don't Really Want To Go To The Zoo Today", 
+        "description": "My step-mom made me go to the zoo, these are the sounds of my protest, no more animals in cages"
+    },
+    {
+        "name": "Sweating to the 90's", 
+        "description": "90's hip-hop to get you moving"
+    },
+    {
+        "name": "Grey Daze", 
+        "description": "The ultimate rainy day soundtrack"
+    },
+    {
+        "name": "Travis Pastrana, Please Don't Crash Your Rally Car Into My House Again", 
+        "description": "Nitro Circus greatest hits"
+    },
+    {
+        "name": "Larry David Keeps Stealing My Bubble Tea", 
+        "description": "I just want him to stop, but this is the music that plays at this absolutely fire bubble tea shop"
+    },
+    {
+        "name": "Therapy Session", 
+        "description": "Sounds from inside my therapy sessions"
+    },
+    {
+        "name": "Back In The Barn Yard", 
+        "description": "Barn yard ambience"
+    },
+    {
+        "name": "Windows Down", 
+        "description": "For when we're shredding I-90 in my Nissan Sentra"
+    },
+    {
+        "name": "Joyful", 
+        "description": "Let's just lift our souls up outta this shiz"
+    },
+    {
+        "name": "If you were a sad teen in 2014-2016 these songs will resonate with you", 
+        "description": "If you don't love me at my worst..."
+    },
+    {
+        "name": "Underwater", 
+        "description": "Music to listen to when you are underwater"
+    },
+    {
+        "name": "LoveLiveLaugh", 
+        "description": "2021 boomer aesthetic"
+    },
+    {
+        "name": "Magnetic Rainbows", 
+        "description": "Prime Psychedelia"
+    },
+    {
+        "name": "Two Left Shoes", 
+        "description": "Walking around in an unfamilar place? This is the soundtrack for you"
+    },
+    {
+        "name": "Under Construction", 
+        "description": "Sounds from your favorite construction site"
     }
 ]
