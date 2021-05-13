@@ -109,16 +109,24 @@ router.get('/tracks', async (req, res) => {
 })
 
 router.post('/tracks', async (req, res) => {
+  const user_id = req.session.user_id;
+  const tracks = [];
+  
+  await req.body.forEach(track => tracks.push({
+    tracks: track,
+    user_id: req.session.user_id
+  }))
+  
+  console.log(tracks);
+  
   try {
-    const trackData = await Music.create({
-      track: req.body.track
-    });
+    const trackData = await Music.bulkCreate(tracks)
     res.status(200).json(trackData)
   } catch (error) {
     console.error(error);
     res.status(500).json(error);
   }
-})
+  })
 
 router.put('/track/:id', async (req, res) => {
   // Calls the update method on the Book model

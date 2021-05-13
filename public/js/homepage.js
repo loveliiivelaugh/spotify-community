@@ -31,7 +31,7 @@ const setTopArtist = async (event) => {
     }
 };
 
-// setting, editing, and deleting top genres
+// setting genres
 const setTopGenre = async (event) => {
     console.log("!!!genres save", event.target);
 
@@ -59,6 +59,33 @@ const setTopGenre = async (event) => {
     }
 };
 
+// setting genres
+const setTopTrack = async (event) => {
+    console.log("!!!tracks save", event.target);
+
+    console.log(topTracksArray.childNodes);
+
+    const topTracks = []
+    topTracksArray.childNodes.forEach(el => 
+        el.value ? topTracks.push(el.value) : ''
+    )
+
+    try {
+        const example = {
+            genre: 'Call Me Maybe'
+        }
+
+        const response = await fetch('/api/music/tracks', {
+            method: "POST",
+            body: JSON.stringify(topTracks),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })   
+    } catch (error) {
+        console.error(error);
+    }
+};
 
 // event listeners
 
