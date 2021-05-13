@@ -3,34 +3,50 @@ const User = require('../models/User.js');
 const Music = require('../models/Music.js');
 const withAuth = require('../utils/auth');
 const spotifyApi = require('../utils/spotify.js');
+const axios = require("axios");
 
+
+//This is the route to render the home page => '/'
 router.get('/', async (req, res) => {
-
-  const musicData = await Music.findAll({order: [['id', 'DESC']]});
-
-  console.log(musicData);
+  const musicData = await Music.findAll({ sort: ["ascending"] });
 
   const music = musicData.map(music => music.get({ plain: true }))
 
-  // console.log(music);
-  // const music = musicData.map(music => music.get({ plain: true }))
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+    });
 
+    const user = userData.get({ plain: true });
+
+  // // console.log(music);
+  // // const music = musicData.map(music => music.get({ plain: true }))
+  // const favMusic = await fetch('/api/music/artists', {
+  //   body: music
+  // });
+  // //reccommend
+
+  console.log(user);
 
   try {
     res.render('homepage', {
       logged_in: req.session.logged_in,
+      user: user,
       artists: music.splice(0, 5)
-
-    });
-  } catch (err) {
+    })
+  } catch(err) {
     res.status(500).json(err);
   }
 });
 
 router.get('/playlists', async (req, res) => {
+
+  console.log(spotifyApi.getAccessToken())
+
   try {
     res.render('playlist', { 
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      logged_in_with_spotify: spotifyApi.getAccessToken() === null || undefined ? false : true
     });
   } catch (err) {
     res.status(500).json(err);

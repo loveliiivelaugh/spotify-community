@@ -1,7 +1,9 @@
 <div id="mainContent" class="container">
 
-  <div id="welcomeBox" class="row">hello
-    <span id="username">username</span>
+  <div id="welcomeBox" class="row">Hello
+  {{#if logged_in }}
+    <span id="username">{{ user.name }} : {{ user.email }}</span>
+  {{/if}}
   </div>
 
   <div id="topMusicRow" class="row">

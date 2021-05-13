@@ -13,12 +13,20 @@
                 </div>
             </div>
 
+        {{#if logged_in_with_spotify }}
         {{!-- <h1>This is an example of the Authorization Code flow</h1> --}}
+            <div class="container">
+                <form id="logout" method="POST" action="/api/spotify/logout">
+                    <input type="submit" value="Disconnect from Spotify">
+                </form>
+            </div>
+        {{else}}
             <div class="container">
                 <form id="login" method="POST" action="/api/spotify/login">
                     <input type="submit" value="Log in with Spotify">
                 </form>
             </div>
+        {{/if}}
 
             <div class="col similar-artists">
                 <div class="card" style="width: 18rem;">

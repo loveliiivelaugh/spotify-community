@@ -59,7 +59,7 @@ const setTopGenre = async (event) => {
     }
 };
 
-// setting genres
+// setting tracks
 const setTopTrack = async (event) => {
     console.log("!!!tracks save", event.target);
 
