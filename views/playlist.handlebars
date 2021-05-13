@@ -22,6 +22,22 @@
     {{/if}}
 
 
+        <div>
+            <button onclick="playlistBtnClick()">Randomize Playlist</button>
+        </div>
+
+            <div class="col similar-artists">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top album-covers" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Similar Artists</h5>
+                        <p class="card-text artist-name">
+                            <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+                            <label class="btn btn-primary" for="btn-check">{{artist.name}}</label>
+                        </p>
+                    </div>
+                </div>
+
 <h1 class="playlist-name">New Playlist</h1>
 <div class="row">
     <div class="col song-numbers">
@@ -93,7 +109,27 @@
                 </p>
             </div>
         </div>
-    </div>
+
 </div>
-<div class="row d-grid gap-2 col-2 mx-auto">
-    <input class="btn btn-primary" type="submit" value="Create">
+
+
+
+//    </div>
+//</div>
+//<div class="row d-grid gap-2 col-2 mx-auto">
+//    <input class="btn btn-primary" type="submit" value="Create">
+<script>
+const playlistBtnClick = async () => {
+
+    console.log("I have been clicked!")
+
+    const response = await fetch('/api/playlists/randomize-playlist', {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })  
+
+    console.log(response);
+}
+</script>
