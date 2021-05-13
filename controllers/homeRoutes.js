@@ -15,46 +15,31 @@ const axios = require("axios");
 
 //This is the route to render the home page => '/'
 router.get('/', async (req, res) => {
-  // const musicData = await Music.findAll({ sort: ["ascending"] });
 
   const artistData = await Artists.findAll({order: [['id', 'DESC']]});
   const genreData = await Genres.findAll({order: [['id', 'DESC']]});
   const trackData = await Tracks.findAll({order: [['id', 'DESC']]});
 
-  // console.log(musicData);
-
-  // const music = musicData.map(music => music.get({ plain: true }))
   const artist = artistData.map(artist => artist.get({ plain: true}));
   const genre = genreData.map(genre => genre.get({ plain: true}));
   const track = trackData.map(track => track.get({ plain: true}));
-
-  // const music = musicData.map(music => music.get({ plain: true }))
 
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
     });
 
-    const user = userData.get({ plain: true });
+    const user = userData && userData.get({ plain: true });
 
-
-  // // console.log(music);
-  // // const music = musicData.map(music => music.get({ plain: true }))
-  // const favMusic = await fetch('/api/music/artists', {
-  //   body: music
-  // });
-  // //reccommend
-
-  console.log(user);
+  console.log(user, artist, genre, track);
 
   try {
     res.render('homepage', {
       logged_in: req.session.logged_in,
       user: user,
       artists: artist.splice(0, 5),
-      genres: genre.splice(0,5 ),
+      genres: genre.splice(0, 5),
       tracks: track.splice(0, 5)
-
     });
   } catch (err) {
 
