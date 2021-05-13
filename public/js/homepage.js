@@ -1,5 +1,6 @@
-const topArtistsArray = document.getElementById("artistsInputs")
-
+const topArtistsArray = document.getElementById("artistsInputs");
+const topGenresArray = document.getElementById("genreInputs");
+const topTracksArray = document.getElementById("trackInputs")
 console.log("I am attached!!!")
 
 // setting, editing and deleting top artists
@@ -30,30 +31,61 @@ const setTopArtist = async (event) => {
     }
 };
 
-
-
-// const editTopArtist = async (event) => {};
-// const delTopArtist = async (event) => {};
-
-
-
-// setting, editing, and delting top genres
+// setting genres
 const setTopGenre = async (event) => {
-console.log("genres save");
+    console.log("!!!genres save", event.target);
 
+    console.log(topGenresArray.childNodes);
+
+    const topGenres = []
+    topGenresArray.childNodes.forEach(el => 
+        el.value ? topGenres.push(el.value) : ''
+    )
+
+    try {
+        const example = {
+            genre: 'rock'
+        }
+
+        const response = await fetch('/api/music/genres', {
+            method: "POST",
+            body: JSON.stringify(topGenres),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })   
+    } catch (error) {
+        console.error(error);
+    }
 };
-// const editTopGenre = async (event) => {};
-// const delTopGenre = async (event) => {};
 
-
-// setting, editing, and deleting top tracks
+// setting genres
 const setTopTrack = async (event) => {
-   console.log("tracks save");
+    console.log("!!!tracks save", event.target);
+
+    console.log(topTracksArray.childNodes);
+
+    const topTracks = []
+    topTracksArray.childNodes.forEach(el => 
+        el.value ? topTracks.push(el.value) : ''
+    )
+
+    try {
+        const example = {
+            genre: 'Call Me Maybe'
+        }
+
+        const response = await fetch('/api/music/tracks', {
+            method: "POST",
+            body: JSON.stringify(topTracks),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })   
+    } catch (error) {
+        console.error(error);
+    }
 };
-// const editTopTrack = async (event) => {};
-// const delTopTrack = async (event) => {};
-
-
 
 // event listeners
 
