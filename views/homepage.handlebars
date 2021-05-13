@@ -50,6 +50,21 @@
       <div id="topGenresList">
         <div class="input-group mb-3" id="genreInputs">
 
+          {{#if artists.length }}
+
+          {{#each artists as |genre| }}
+            {{!-- <li>{{ artist.artist }}</li> --}}
+            <input type="text" class="form-control" aria-label="artist1" value="{{genre.genres}}" />
+          {{/each}}
+
+        {{else}}
+            <input type="text" class="form-control" aria-label="artist1" />
+            <input type="text" class="form-control" aria-label="artist2" />
+            <input type="text" class="form-control" aria-label="artist3" />
+            <input type="text" class="form-control" aria-label="artist4" />
+            <input type="text" class="form-control" aria-label="artist5" />
+
+
         {{#if genres.length }}
 
           {{#each genres as |genre| }}
@@ -63,6 +78,7 @@
           <input type="text" class="form-control" aria-label="genre3">
           <input type="text" class="form-control" aria-label="genre4">
           <input type="text" class="form-control" aria-label="genre5">
+
         {{/if}}
         </div>
       </div>
@@ -77,6 +93,19 @@
         >save</button></div>
       <div id="topTracksList">
         <div class="input-group mb-3" id="trackInputs">
+                  {{#if artists.length }}
+
+          {{#each artists as |track| }}
+            {{!-- <li>{{ artist.artist }}</li> --}}
+            <input type="text" class="form-control" aria-label="artist1" value="{{track.tracks}}" />
+          {{/each}}
+
+        {{else}}
+            <input type="text" class="form-control" aria-label="artist1" />
+            <input type="text" class="form-control" aria-label="artist2" />
+            <input type="text" class="form-control" aria-label="artist3" />
+            <input type="text" class="form-control" aria-label="artist4" />
+            <input type="text" class="form-control" aria-label="artist5" />
 
         {{#if tracks.length }}
 

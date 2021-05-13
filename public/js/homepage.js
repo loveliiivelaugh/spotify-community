@@ -19,7 +19,7 @@ const setTopArtist = async (event) => {
             artist: 'red hot chili peppers'
         }
 
-        const response = await fetch('/api/music/artists', {
+        const response = await fetch('/api/artists/artists', {
             method: "POST",
             body: JSON.stringify(topArtists),
             headers: {
@@ -47,7 +47,7 @@ const setTopGenre = async (event) => {
             genre: 'rock'
         }
 
-        const response = await fetch('/api/music/genres', {
+        const response = await fetch('/api/genres/genres', {
             method: "POST",
             body: JSON.stringify(topGenres),
             headers: {
@@ -75,7 +75,7 @@ const setTopTrack = async (event) => {
             genre: 'Call Me Maybe'
         }
 
-        const response = await fetch('/api/music/tracks', {
+        const response = await fetch('/api/tracks/tracks', {
             method: "POST",
             body: JSON.stringify(topTracks),
             headers: {
