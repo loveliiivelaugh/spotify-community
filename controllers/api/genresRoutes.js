@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Genres = require('../../models/artists.js');
+const Genres = require('../../models/genres.js');
 
 router.post('/genres', async (req, res) => {
     // console.log(req.body);
