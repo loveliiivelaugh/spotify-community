@@ -19,7 +19,7 @@
 
 /* body css to set background to dark */
 body {
-    background-image: linear-gradient(90deg, #778C92, #889aa0);
+    background-image: linear-gradient(90deg, #D6E2FF, #FDEDEE);
     font-family: 'Varela Round', sans-serif;
 
 }
@@ -43,6 +43,17 @@ body {
     background-color: var(--lightblue);
 }
 
+/* logout button */
+#logout {
+    color: var(--darkpink);
+    background: none;
+    border: none;
+}
+
+#logout:hover {
+    text-shadow: 3px 3px var(--regpink);
+    background: var(--lightpink);
+}
 
 /* main elements */
 
@@ -52,10 +63,16 @@ body {
     height: 100px;
     background: var(--regblue);
     box-shadow: 6px 10px 0px var(--darkblue);
+    font-size: 36px;
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 25px;
 }
 
 #username {
-    font-size: 48px;
+    /* font-size: 48px; */
 }
 
 /* top artists songs and genres row + boxes */
@@ -67,6 +84,7 @@ body {
     align-items: center;
     font-size: 24px;
     padding: 4px 0px;
+    color: var(--darkblue);
 }
 
 /* stylizing save buttons */
