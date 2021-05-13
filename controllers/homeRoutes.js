@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const User = require('../models/User.js');
-const Music = require('../models/Music.js');
 const withAuth = require('../utils/auth');
 const spotifyApi = require('../utils/spotify.js');
 const axios = require("axios");
