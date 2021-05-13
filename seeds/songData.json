@@ -46,5 +46,239 @@
         "artist": "The Trammps", 
         "album": "Disco For You",
         "genre": "vintage-disco"
+    },
+    {
+        "track": "Girl", 
+        "artist": "The Internet", 
+        "album": "Ego Death",
+        "genre": "R&B/Soul"
+    },
+    {
+        "track": "Warm Animal", 
+        "artist": "Sure Sure", 
+        "album": "What's it like",
+        "genre": "Alternative"
+    },
+    {
+        "track": "Neon Moon", 
+        "artist": "Brooks & Dunn", 
+        "album": "The Greatest Hits Collection",
+        "genre": "Country"
+    },
+    {
+        "track": "Cradles", 
+        "artist": "Sub Urban", 
+        "album": "CRadles - Single",
+        "genre": "Alternative"
+    },
+    {
+        "track": "That's Amore", 
+        "artist": "Dean Martin", 
+        "album": "Dino",
+        "genre": "Pop"
+    },
+    {
+        "track": "My Body - Single", 
+        "artist": "Claud & Del Water Gap", 
+        "album": "My Body - Single",
+        "genre": "Indie Pop"
+    },
+    {
+        "track": "Soft Spot", 
+        "artist": "Claud", 
+        "album": "Super Monster",
+        "genre": "Alternative"
+    },
+    {
+        "track": "Tadow", 
+        "artist": "Masego", 
+        "album": "Lady Lady",
+        "genre": "R&B/Soul"
+    },
+    {
+        "track": "Pink & White", 
+        "artist": "Frank Ocean", 
+        "album": "blond",
+        "genre": "Pop"
+    },
+    {
+        "track": "Good News", 
+        "artist": "Mac Miller", 
+        "album": "Circles",
+        "genre": "Hip-Hop/Rap"
+    },
+    {
+        "track": "Novocaine", 
+        "artist": "The Unlikely Candidates", 
+        "album": "Novocaine - Single",
+        "genre": "Alternative"
+    },
+    {
+        "track": "Color Scheme", 
+        "artist": "The Jephries", 
+        "album": "Holland",
+        "genre": "Rock"
+    },
+    {
+        "track": "I would", 
+        "artist": "Surf Mesa", 
+        "album": "bedroom - EP",
+        "genre": "Ambient"
+    },
+    {
+        "track": "California", 
+        "artist": "The Lagoons", 
+        "album": "Gems - EP",
+        "genre": "Pop"
+    },
+    {
+        "track": "Cherry Cola", 
+        "artist": "Kuwada", 
+        "album": "Cheery Cola - Single",
+        "genre": "Pop"
+    },
+    {
+        "track": "(Sittin' On) The Dock of the Bay", 
+        "artist": "Otis Redding", 
+        "album": "The Very Best of Otis Redding",
+        "genre": "R&B/Soul"
+    },
+    {
+        "track": "Fare Thee Well (Dink's Song)", 
+        "artist": "Oscar Issac & Marcus Mumford", 
+        "album": "Inside Liewyn Davis(Original Soundtrack RecoRding)",
+        "genre": "Soundtrack"
+    },
+    {
+        "track": "Biking (feat. JAY Z & Tyler the Creator)", 
+        "artist": "Frank Ocean", 
+        "album": "Biking (feat. JAY Z & Tyler the Creator) - Single",
+        "genre": "Pop"
+    },
+    {
+        "track": "Flight 99", 
+        "artist": "Please Wait, Ta-Ku & matt mcWaters", 
+        "album": "Black & White - EP",
+        "genre": "Contemporary R&B"
+    },
+    {
+        "track": "Come on Eileen", 
+        "artist": "Corey Kilgannon", 
+        "album": "Cash 4 Covers - EP",
+        "genre": "Alternative"
+    },
+    {
+        "track": "I'm That Guy", 
+        "artist": "Agar Agar", 
+        "album": "Carden",
+        "genre": "Rock"
+    },
+    {
+        "track": "Jesus Christ", 
+        "artist": "Brand New", 
+        "album": "The Devil and God Are Raging Inside Me",
+        "genre": "Alternative"
+    },
+    {
+        "track": "belas", 
+        "artist": "eevee", 
+        "album": "Seeds",
+        "genre": "Hip-Hop"
+    },
+    {
+        "track": "Way it Goes", 
+        "artist": "Hippo Campus", 
+        "album": "Landmark",
+        "genre": "Alternative"
+    }, 
+    {
+        "track": "La Chona", 
+        "artist": "Los Tucanes de Tijuana", 
+        "album": "Para Tucancillos y Tucancillas", 
+        "genre": "Musica Mexicana"
+    }, 
+    {
+        "track": "MIA (feat. Drake)", 
+        "artist": "Bad Bunny", 
+        "album": "MIA (feat. Drake) - Single",
+        "genre": "Latin"
+    },
+    {
+        "track": "West Coast", 
+        "artist": "Coconut Records", 
+        "album": "Nighttiming",
+        "genre": "Alternative"
+    },
+    {
+        "track": "Set Adrift on Memory Bliss", 
+        "artist": "Doc G", 
+        "album": "Welcome 2 the Far Universe",
+        "genre": "R&B?Soul"
+    },
+    {
+        "track": "Get Crunk (feat. Bo Hagon", 
+        "artist": "Lil Jon & The East Side Boyz", 
+        "album": "Crunk Juice",
+        "genre": "Hip-Hop/Rap"
+    },
+    {
+        "track": "Tailwhip Revisited", 
+        "artist": "Men I Trust", 
+        "album": "Oncle Jazz",
+        "genre": "Pop"
+    },
+    {
+        "track": "Lake of Fire (Live)", 
+        "artist": "Nirvana", 
+        "album": "MTV Unplugged In New York (Live)",
+        "genre": "Alternative"
+    },
+    {
+        "track": "Rich & Sad", 
+        "artist": "Post Malone", 
+        "album": "beerbong & bentleys",
+        "genre": "Hip-Hop/Rap"
+    },
+    {
+        "track": "Love Galore (feat. Travis Scott)", 
+        "artist": "SZA", 
+        "album": "Ctrl",
+        "genre": "R&B/Soul"
+    },
+    {
+        "track": "Night 1", 
+        "artist": "25 Nights for Nujabes", 
+        "album": "Ta-ku",
+        "genre": "Hip-Hop/Rap"
+    },
+    {
+        "track": "Better Dayz", 
+        "artist": "2Pac", 
+        "album": "Better Dayz",
+        "genre": "Hip-Hop/Rap"
+    },
+    {
+        "track": "Nightcall", 
+        "artist": "Kavinsky", 
+        "album": "Outrun",
+        "genre": "Electronic"
+    },
+    {
+        "track": "", 
+        "artist": "", 
+        "album": "",
+        "genre": ""
+    },
+    {
+        "track": "", 
+        "artist": "", 
+        "album": "",
+        "genre": ""
+    },
+    {
+        "track": "", 
+        "artist": "", 
+        "album": "",
+        "genre": ""
     }
 ]
