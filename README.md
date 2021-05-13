@@ -5,11 +5,11 @@ https://spotify-community.herokuapp.com/
 https://github.com/loveliiivelaugh/spotify-community
 
 ## Contributors
-@jjayjack
-@0117Javi
-@mfrancisco9
-@loveliiivelaugh
-@haydenabeck
+-- @jjayjack
+-- @0117Javi
+ -- @mfrancisco9
+-- @loveliiivelaugh
+-- @haydenabeck
 
 ## Description:
 
@@ -34,6 +34,8 @@ Handlebars, Javascript, CSS
 
 ## Usage:
   To start, a user will have to login to their homepage. Once authenticated, the user will have the ability to search for an artist or song by an artist. Once the request has been made, the program will search the Spotify API database in order to field that request by the user input. The response will be a randomly generated playlist that will take in similar aspects of the input's genre.
+
+  Within spotify_db, there are separate tables for User, Artists, Genres, and Tracks, with the latter 3 all referencing the ID of the user they were submitted by.
 
 ## Construction
 
