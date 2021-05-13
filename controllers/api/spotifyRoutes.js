@@ -35,11 +35,18 @@ router.get('/callback', (req, res) => {
       spotifyApi.setAccessToken(data.body['access_token']);
       spotifyApi.setRefreshToken(data.body['refresh_token']);
 
-      res.json({
+      const tokens = {
         accessToken: data.body.access_token,
         refreshToken: data.body.refresh_token,
         expiresIn: data.body.expires_in
-      })
+      };
+
+      res
+        .status(200)
+        .render('playlist', { 
+          logged_in: req.session.logged_in,
+          logged_in_with_spotify: true
+        });
 
     })
     .catch(exception =>{ 

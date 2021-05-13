@@ -1,4 +1,5 @@
 const router = require('express').Router();
+
 const User = require('../models/User.js');
 // const Music = require('../models/Music.js');
 
@@ -6,10 +7,15 @@ const Artists = require ('../models/artists');
 const Genres = require ('../models/genres');
 const Tracks = require ('../models/tracks');
 
+
 const withAuth = require('../utils/auth');
 const spotifyApi = require('../utils/spotify.js');
+const axios = require("axios");
 
+
+//This is the route to render the home page => '/'
 router.get('/', async (req, res) => {
+  const musicData = await Music.findAll({ sort: ["ascending"] });
 
   const artistData = await Artists.findAll({order: [['id', 'DESC']]});
   const genreData = await Genres.findAll({order: [['id', 'DESC']]});
@@ -22,9 +28,24 @@ router.get('/', async (req, res) => {
   const genre = genreData.map(genre => genre.get({ plain: true}));
   const track = trackData.map(track => track.get({ plain: true}));
 
-  // console.log(music);
-  // const music = musicData.map(music => music.get({ plain: true }))
+  const music = musicData.map(music => music.get({ plain: true }))
 
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+    });
+
+    const user = userData.get({ plain: true });
+
+
+  // // console.log(music);
+  // // const music = musicData.map(music => music.get({ plain: true }))
+  // const favMusic = await fetch('/api/music/artists', {
+  //   body: music
+  // });
+  // //reccommend
+
+  console.log(user);
 
   try {
     res.render('homepage', {
@@ -35,14 +56,19 @@ router.get('/', async (req, res) => {
 
     });
   } catch (err) {
+
     res.status(500).json(err);
   }
 });
 
 router.get('/playlists', async (req, res) => {
+
+  console.log(spotifyApi.getAccessToken())
+
   try {
     res.render('playlist', { 
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      logged_in_with_spotify: spotifyApi.getAccessToken() === null || undefined ? false : true
     });
   } catch (err) {
     res.status(500).json(err);

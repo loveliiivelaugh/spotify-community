@@ -14,7 +14,6 @@ Music.init(
         },
         artist: {
             type: DataTypes.STRING,
-            
         },
         tracks: {
             type: DataTypes.STRING,
