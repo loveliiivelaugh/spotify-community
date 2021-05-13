@@ -3,14 +3,14 @@
     <h1 class="playlist-name" id="playlists">{{user.name}} Playlists</h1>
 
     <div class="container">
-        <div class="row">            
+        <div class="row">
             {{#each playlists as |playlist|}}
-            <div class="col"  id="playlist-card">
+            <div class="col" id="playlist-card">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">{{playlist.playlist_name}}DanceDance</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{playlist.description}}Let's Dance</h6>
-                        <p class="card-text">{{playlist.track_name}}What's My Name - Rihanna</p>
+                        <h5 class="card-title">{{playlist.playlist_name}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{playlist.description}}</h6>
+                        <p class="card-text">{{playlist.track_name}}</p>
                     </div>
                 </div>
             </div>
@@ -21,4 +21,79 @@
 
     {{/if}}
 
+
+<h1 class="playlist-name">New Playlist</h1>
+<div class="row">
+    <div class="col song-numbers">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top album-covers" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Number of Songs</h5>
+                <p class="card-text song-number">
+                    <input class="form-control" type="text" placeholder="20" aria-label="default input example">
+                </p>
+            </div>
+        </div>
+    </div>
+    {{#if logged_in_with_spotify }}
+    {{!-- <h1>This is an example of the Authorization Code flow</h1> --}}
+    <div class="container">
+        <form id="logout" method="POST" action="/api/spotify/logout">
+            <input type="submit" value="Disconnect from Spotify">
+        </form>
+    </div>
+    {{else}}
+    <div class="container">
+        <form id="login" method="POST" action="/api/spotify/login">
+            <input type="submit" value="Log in with Spotify">
+        </form>
+    </div>
+    {{/if}}
+
+    <div class="col similar-artists">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top album-covers" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Similar Artists</h5>
+                <p class="card-text artist-name">
+                    <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+                    <label class="btn btn-primary" for="btn-check">{{artist.name}}</label>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col genres">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top genres" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Genres</h5>
+                <p class="card-text genre-form">
+                    <select class="form-select" multiple aria-label="multiple select example">
+                        <option selected></option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col moods">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top moods" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Mood</h5>
+                <p class="card-text genre-form">
+                    <select class="form-select" multiple aria-label="multiple select example">
+                        <option selected></option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
+<div class="row d-grid gap-2 col-2 mx-auto">
+    <input class="btn btn-primary" type="submit" value="Create">
