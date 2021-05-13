@@ -1,4 +1,5 @@
 const sequelize = require('../config/connection');
+
 const { Song, User, Playlist } = require('../models');
 
 
@@ -22,6 +23,10 @@ const seedDatabase = async () => {
   });
 
   const playlistData = await Playlist.bulkCreate(playlistData, {
+    individualHooks: true,
+    returning: true,
+  });
+  await User.bulkCreate(songData, {
     individualHooks: true,
     returning: true,
   });
