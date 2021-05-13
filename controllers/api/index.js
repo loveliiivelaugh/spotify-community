@@ -11,6 +11,7 @@ const spotifyRoutes = require('./spotifyRoutes');
 const artistsRoutes = require('./artistsRoutes');
 const genresRoutes = require('./genresRoutes');
 const tracksRoutes = require('./tracksRoutes');
+const playlistRoutes = require('./playlistRoutes');
 
 // const albumRoutes = require('./albumRoutes');
 // const artistRoutes = require('./artistRoutes');
@@ -28,11 +29,11 @@ router.use('/users', userRoutes);
 
 router.use('/spotify', spotifyRoutes);
 // router.use('/music', musicRoutes);
-
 //new
 router.use('/artists', artistsRoutes);
 router.use('/genres', genresRoutes);
 router.use('/tracks', tracksRoutes);
+router.use('/playlists', playlistRoutes);
 
 
 // router.use('/albums', albumRoutes);

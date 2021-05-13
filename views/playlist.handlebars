@@ -28,6 +28,10 @@
             </div>
         {{/if}}
 
+        <div>
+            <button onclick="playlistBtnClick()">Randomize Playlist</button>
+        </div>
+
             <div class="col similar-artists">
                 <div class="card" style="width: 18rem;">
                     <img src="..." class="card-img-top album-covers" alt="...">
@@ -77,3 +81,19 @@
         <input class="btn btn-primary" type="submit" value="Create">
         </div>
 </div>
+
+<script>
+const playlistBtnClick = async () => {
+
+    console.log("I have been clicked!")
+
+    const response = await fetch('/api/playlists/randomize-playlist', {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })  
+
+    console.log(response);
+}
+</script>

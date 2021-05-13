@@ -1,16 +1,12 @@
 const router = require('express').Router();
-
+const axios = require("axios");
+const withAuth = require('../utils/auth');
+const spotifyApi = require('../utils/spotify.js');
+//Models
 const User = require('../models/user.js');
-// const Music = require('../models/Music.js');
-
 const Artists = require ('../models/artists');
 const Genres = require ('../models/genres');
 const Tracks = require ('../models/tracks');
-
-
-const withAuth = require('../utils/auth');
-const spotifyApi = require('../utils/spotify.js');
-const axios = require("axios");
 
 
 //This is the route to render the home page => '/'
@@ -54,7 +50,7 @@ router.get('/playlists', async (req, res) => {
   try {
     res.render('playlist', { 
       logged_in: req.session.logged_in,
-      logged_in_with_spotify: spotifyApi.getAccessToken() === null || undefined ? false : true
+      logged_in_with_spotify: false
     });
   } catch (err) {
     res.status(500).json(err);
