@@ -3,6 +3,7 @@ const User = require('../models/User.js');
 const Music = require('../models/Music.js');
 const withAuth = require('../utils/auth');
 const spotifyApi = require('../utils/spotify.js');
+const axios = require("")
 
 router.get('/', async (req, res) => {
   // console.log(await Music.findAll({ sort: ["descending"] }))
@@ -10,9 +11,12 @@ router.get('/', async (req, res) => {
 
   const music = musicData.map(music => music.get({ plain: true }))
 
-  // console.log(music);
-  // const music = musicData.map(music => music.get({ plain: true }))
-
+  // // console.log(music);
+  // // const music = musicData.map(music => music.get({ plain: true }))
+  // const favMusic = await fetch('/api/music/artists', {
+  //   body: music
+  // });
+  // //reccommend
 
   try {
     res.render('homepage', {
