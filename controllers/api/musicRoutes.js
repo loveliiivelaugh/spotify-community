@@ -1,6 +1,6 @@
 const router = require('express').Router();
 // const { Model } = require('sequelize/types');
-const Music = require('../../models/Music.js')
+const Music = require('../../models/music.js')
 
 
 router.get('/artist/:id', async (req, res) => {
