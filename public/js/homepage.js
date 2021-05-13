@@ -1,5 +1,6 @@
-const topArtistsArray = document.getElementById("artistsInputs")
-
+const topArtistsArray = document.getElementById("artistsInputs");
+const topGenresArray = document.getElementById("genreInputs");
+const topTracksArray = document.getElementById("trackInputs")
 console.log("I am attached!!!")
 
 // setting, editing and deleting top artists
@@ -30,29 +31,33 @@ const setTopArtist = async (event) => {
     }
 };
 
-
-
-// const editTopArtist = async (event) => {};
-// const delTopArtist = async (event) => {};
-
-
-
-// setting, editing, and delting top genres
+// setting, editing, and deleting top genres
 const setTopGenre = async (event) => {
-console.log("genres save");
+    console.log("!!!genres save", event.target);
 
+    console.log(topGenresArray.childNodes);
+
+    const topGenres = []
+    topGenresArray.childNodes.forEach(el => 
+        el.value ? topGenres.push(el.value) : ''
+    )
+
+    try {
+        const example = {
+            genre: 'rock'
+        }
+
+        const response = await fetch('/api/music/genres', {
+            method: "POST",
+            body: JSON.stringify(topGenres),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })   
+    } catch (error) {
+        console.error(error);
+    }
 };
-// const editTopGenre = async (event) => {};
-// const delTopGenre = async (event) => {};
-
-
-// setting, editing, and deleting top tracks
-const setTopTrack = async (event) => {
-   console.log("tracks save");
-};
-// const editTopTrack = async (event) => {};
-// const delTopTrack = async (event) => {};
-
 
 
 // event listeners

@@ -180,16 +180,35 @@ router.get('/genres', async (req, res) => {
 })
 
 router.post('/genres', async (req, res) => {
-  try {
-    const genreData = await Music.create({
-      genre: req.body.genre
-    });
-    res.status(200).json(genreData)
-  } catch (error) {
-    console.error(error);
-    res.status(500).json(error);
-  }
+const user_id = req.session.user_id;
+const genres = [];
+
+await req.body.forEach(genre => genres.push({
+  genres: genre,
+  user_id: req.session.user_id
+}))
+
+console.log(genres);
+
+try {
+  const genreData = await Music.bulkCreate(genres)
+  res.status(200).json(genreData)
+} catch (error) {
+  console.error(error);
+  res.status(500).json(error);
+}
 })
+
+  //   try {
+//     const genreData = await Music.create({
+//       genre: req.body.genre
+//     });
+//     res.status(200).json(genreData)
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json(error);
+//   }
+// })
 
 
 router.put('/genre/:id', async (req, res) => {
