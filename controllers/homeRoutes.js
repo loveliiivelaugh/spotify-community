@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const User = require('../models/User.js');
+const User = require('../models/user.js');
 // const Music = require('../models/Music.js');
 
 const Artists = require ('../models/artists');
@@ -15,7 +15,7 @@ const axios = require("axios");
 
 //This is the route to render the home page => '/'
 router.get('/', async (req, res) => {
-  const musicData = await Music.findAll({ sort: ["ascending"] });
+  // const musicData = await Music.findAll({ sort: ["ascending"] });
 
   const artistData = await Artists.findAll({order: [['id', 'DESC']]});
   const genreData = await Genres.findAll({order: [['id', 'DESC']]});
@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
   const genre = genreData.map(genre => genre.get({ plain: true}));
   const track = trackData.map(track => track.get({ plain: true}));
 
-  const music = musicData.map(music => music.get({ plain: true }))
+  // const music = musicData.map(music => music.get({ plain: true }))
 
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
@@ -50,9 +50,10 @@ router.get('/', async (req, res) => {
   try {
     res.render('homepage', {
       logged_in: req.session.logged_in,
+      user: user,
       artists: artist.splice(0, 5),
-      genres: genre.splice(0,5),
-      tracks: track.splice(0,5)
+      genres: genre.splice(0,5 ),
+      tracks: track.splice(0, 5)
 
     });
   } catch (err) {
