@@ -1,0 +1,9 @@
+<div class="container" id="mainListHolder">
+    <div class="card" id="playlistCard">
+        <ul class="list-group list-group-flush">
+        {{#each playlist.item as |item|}}
+        <li class="list-group-item">{{item.artist_name}} - {{item.track_name}}</li>
+        {{/each}}
+        </ul>
+    </div>
+</div>
