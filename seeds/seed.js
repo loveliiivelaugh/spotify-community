@@ -1,6 +1,6 @@
 const sequelize = require('../config/connection');
 
-const { Song, User, Playlist } = require('../models');
+const { Song, User, Playlist, Genre, Artist } = require('../models');
 
 
 const playlistData = require('./playlistData.json'); 
@@ -18,6 +18,14 @@ const seedDatabase = async () => {
   });
 
   const songs = await Song.bulkCreate(songData, {
+    individualHooks: true,
+    returning: true,
+  });
+  const songData = await Genre.bulkCreate(genreData, {
+    individualHooks: true,
+    returning: true,
+  });
+  const songData = await Artist.bulkCreate(artistData, {
     individualHooks: true,
     returning: true,
   });
