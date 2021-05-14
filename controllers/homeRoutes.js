@@ -44,9 +44,6 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/playlists', async (req, res) => {
-
-  console.log(spotifyApi.getAccessToken())
-
   try {
     res.render('playlist', { 
       logged_in: req.session.logged_in,

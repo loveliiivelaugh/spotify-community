@@ -92,8 +92,9 @@ const playlistBtnClick = async () => {
         headers: {
             "Content-Type": "application/json",
         },
-    })  
+    })
+    const playlistData = await response.json()
 
-    console.log(response);
+    console.log(playlistData);
 }
 </script>
