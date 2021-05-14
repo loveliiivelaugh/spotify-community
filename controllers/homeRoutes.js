@@ -54,6 +54,24 @@ router.get('/playlists', async (req, res) => {
   }
 });
 
+router.get('/playlistdisplay', async (req, res) => {
+
+  const recommendations = await axios.get('/api/playlists/randomize-playlist');
+
+  console.log(recommendations)
+
+
+  try {
+    res.render('playlistdisplay', { 
+      logged_in: req.session.logged_in,
+      logged_in_with_spotify: false,
+      tracks: recommendations.tracks
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
