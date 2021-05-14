@@ -158,3 +158,29 @@ body {
 
 }
 
+/* css for playlist view */
+
+#mainlistHolder {
+    background-color: var(--regblue);
+    box-shadow: 6px 10px 0px var(--darkblue);
+    padding: 25px
+}
+
+#songList {
+    border-radius: none;
+}
+
+#songList li:nth-child(even) {
+    background-color: var(--lightyellow);
+    box-shadow: 4px 6px 0px var(--darkyellow);
+    border-radius: 0px;
+    border: none;
+}
+
+#songList li:nth-child(odd) {
+    background-color: var(--lightpink);
+    box-shadow: 4px 6px 0px var(--darkpink);
+    border-radius: 0px;
+    border: none;
+
+}
