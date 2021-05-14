@@ -24,7 +24,10 @@ router.get('/randomize-playlist', async (req, res) => {
     .splice(topArtists.length - 5, topArtists.length)
     .forEach(artist => artists.push({ name: artist.artist_name }))
 
-  const getIds = async () => Promise.all(artists.map(async artist => await getId(artist.name)));
+  const getIds = async () => {
+    const promises = artists.map(async artist => await getId(artist.name))
+    const artistIds = Promise.all(promises)
+  }
 
   spotifyApi.getRecommendations({
     min_energy: 0.4,
